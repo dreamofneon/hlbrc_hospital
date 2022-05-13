@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>海拉尔区人民医院</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet/less" type="text/css" href="static/css/index.less" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="index">
+    <div class="head">
+          <p>
+              <span class="head_item">
+                  <span><img src="./static/image/index/img.png" alt="">邮编：523059</span>
+                  <span><img src="./static/image/index/img_1.png" alt="">电话： 0769-28637333</span>
+              </span>
+              <span class="head_item">
+                                    <span><img src="./static/image/index/img_2.png" alt="">咨询建议投诉</span>
+                                    <span><img src="./static/image/index/img_3.png" alt="">网上预约</span>
+                                    <span><img src="./static/image/index/img_4.png" alt="">满意度调查</span>
+
+
+              </span>
+          </p>
+    </div>
+    <div class="logo">
+        <img src="./static/image/index/logo.svg" alt="">
+        <div class="input-group">
+            <el-input
+                    placeholder="请输入内容"
+                    v-model="search"
+                    class="input"
+            >
+                <i slot="suffix" class="el-input__icon el-icon-search"></i>
+            </el-input>
+        </div>
+    </div>
+
+    <div class="navs">
+         <span v-for="item in navs" @click="turntoartlist(item)">{{item}}</span>
+    </div>
+    <div class="carousel">
+        <el-carousel height="480px">
+            <el-carousel-item>
+                <img src="./static/image/index/img_5.png" alt="">
+            </el-carousel-item>
+            <el-carousel-item>
+                <img src="./static/image/index/img_6.png" alt="">
+            </el-carousel-item>
+            <el-carousel-item>
+                <img src="./static/image/index/img_7.png" alt="">
+            </el-carousel-item>
+            <el-carousel-item>
+                <img src="./static/image/index/img_8.png" alt="">
+            </el-carousel-item>
+            <el-carousel-item>
+                <img src="./static/image/index/img_9.png" alt="">
+            </el-carousel-item>
+        </el-carousel>
+    </div>
+    <div class="news">
+        <div class="news_left">
+            <h3>医院动态 <span>更多...</span></h3>
+            <div class="news_left_bottom">
+                <div class="carousel">
+                    <el-carousel height="300px" ref="carousel" >
+                        <el-carousel-item>
+                            <img src="./static/image/index/img_5.png" alt="">
+                        </el-carousel-item>
+                        <el-carousel-item>
+                            <img src="./static/image/index/img_6.png" alt="">
+                        </el-carousel-item>
+                        <el-carousel-item>
+                            <img src="./static/image/index/img_7.png" alt="">
+                        </el-carousel-item>
+                        <el-carousel-item>
+                            <img src="./static/image/index/img_8.png" alt="">
+                        </el-carousel-item>
+                        <el-carousel-item>
+                            <img src="./static/image/index/img_9.png" alt="">
+                        </el-carousel-item>
+                    </el-carousel>
+                </div>
+                <div class="bottom_items">
+                    <button v-for="(index,item) in 5" @click="setActiveItem(index)">强国复兴有我</button>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="news_right">
+           <h3>医院公告 <span>更多...</span></h3>
+            <div v-for="item in announce">
+             <p>{{item.title}}</p>
+             <p>{{item.time}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="classic">
+        <h3>科室导航 <span>更多科室</span></h3>
+        <div class="classic_items">
+            <div v-for="item in 6" class="classic_item">
+                <p>内科系统</p>
+                <img src="./static/image/index/neike.png" alt="">
+                <h3>查看详细 <img src="./static/image/index/array.png" alt=""></h3>
+            </div>
+        </div>
+
+    </div>
+    <div class="info">
+             <div class="info_left">
+                  <h3>医院简介</h3>
+                 <p>海拉尔区人民医院自2009年与海拉尔区铁路医院合并以来，在海拉尔区巴彦托海路东侧，异地兴建了海拉尔区人民医院新址，2011年全新的十二层医院综合病房大楼正式启用。近年来，医院逐渐发展成为一所设备先进、专科齐全、技术力量雄厚，集医疗、预防、保健、教学、科研及“120”急救、社区服务于一体的综合性医院。</p>
+                 <p>医院建筑面积3.24万平方米，层数为十二层，开放床位350张，随着新址的建成，新一届领导班子组建后，投入近4千万元资金逐步引进、更新医疗设备。在提高医疗质量、提升服务理念、学科建设、人才培养、医疗基础设施及控制医疗费用等各方面都加大了力度。经过全院共同努力，各项工作取得了跨越式的发展。</p>
+                 <p>医院现有职工 795人，其中高级职称84人、中级职称188人、初级职称403人，设有临床、医技科室38个。是呼伦贝尔市职业技术学院等多家学校的教学实习基地，是海拉尔地区基层卫生医疗机构卫生技术人员培训基地，是呼伦贝尔市多家医疗保险定点医院。</p>
+                 <p>为了增强医院的优势，提高医院的竞争力，经过几年时间的努力，医院超声医学、泌尿外科学、肾脏内科学、眼科学、耳鼻喉科学被确立为呼伦贝尔市临床医学重点学科；麻醉学、心血管内科学被确立为呼伦贝尔市临床医学重点专科，为进一步加强二级学科建设奠定基础。全院各科室不断开展新技术、新业务，就医流程进一步优化</p>
+             </div>
+        <img src="./static/image/index/intro.png" alt="">
+    </div>
+    <div class="footer">
+        <span class="title">海拉尔区人民医院</span>
+        <span>
+                   <span>网站首页</span>
+                   <span>医院概况</span>
+                   <span>院务公开</span>
+                   <span>患者服务</span>
+                   <span>医院新闻</span>
+               </span>
+        <span class="survey">
+                   <span>
+                        <img src="../static/image/arctype/img_1.png" alt="">
+                        <p>职工满意度调查</p>
+                   </span>
+                    <span>
+                        <img src="../static/image/arctype/img_2.png" alt="">
+                        <p>职工满意度调查</p>
+                   </span>
+                     <span>
+                        <img src="../static/image/arctype/img_3.png" alt="">
+                         <p>职工满意度调查</p>
+                   </span>
+               </span>
+    </div>
+</div>
+<script>
+    new Vue({
+        el: '#index',
+        data: function() {
+            return {
+                visible: false,
+                announce:[
+                    {
+                        title:'市人民医院“五一”劳动节门诊安排看这里！',
+                        time:'2022-04-29'
+                    },
+                    {
+                        title:'速速查收！市人民医院清明节放假安排出炉啦！',
+                        time:'2022-04-01'
+                    },
+                    {
+                        title:'海拉尔市人民医院关于新增和调整特需医疗服务项目价格',
+                        time:'2022-03-22'
+                    },
+                    {
+                        title:'医疗卫生机构开展临床研究项目管理办法',
+                        time:'2022-03-22'
+                    },
+
+                ],
+                search:'请输入内容',
+                navs:[
+                    '主页',
+                    '医院概况',
+                    '院务公开',
+                    '患者服务',
+                    '医院新闻',
+                ]
+            }
+        },
+       methods:{
+           setActiveItem(index){
+               this.$refs.carousel.setActiveItem(index-1)
+           },
+           turntoartlist(item){
+           location.href='arctype/artlist.html'
+           }
+       }
+    })
+</script>
+</body>
+</html>

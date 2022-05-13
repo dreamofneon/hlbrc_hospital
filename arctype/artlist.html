@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>海拉尔区人民医院</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr   .net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet/less" type="text/css" href="../static/css/index.less"/>
+    <link rel="stylesheet/less" type="text/css" href="../static/css/arctype.less"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="index">
+    <div class="head">
+        <p>
+              <span class="head_item">
+                  <span><img src="../static/image/index/img.png" alt="">邮编：523059</span>
+                  <span><img src="../static/image/index/img_1.png" alt="">电话： 0769-28637333</span>
+              </span>
+            <span class="head_item">
+                                    <span><img src="../static/image/index/img_2.png" alt="">咨询建议投诉</span>
+                                    <span><img src="../static/image/index/img_3.png" alt="">网上预约</span>
+                                    <span><img s rc="../static/image/index/img_4.png" alt="">满意度调查</span>
+
+
+              </span>
+        </p>
+    </div>
+    <div class="logo">
+        <img src="../static/image/index/logo.svg" alt="">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Twitterhandle">
+        </div>
+    </div>
+
+    <div class="navs">
+        <span>首页</span>
+        <span>医院概况</span>
+        <span>院务公开</span>
+        <span>患者服务</span>
+        <span>医院新闻</span>
+    </div>
+
+    <div class="list">
+        <div class="list_left">
+               <h3>医院概况</h3>
+               <p v-for="item in list">
+                   {{item}}
+               </p>
+        </div>
+        <div class="list_right">
+            <div class="artlist">
+                <ul>
+                    <li v-for="item in article">
+                        <span><img src="../static/image/arctype/img.png" alt="">  {{item.title}} </span>     <span>{{item.time}}</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="page">
+                <el-pagination
+                        @size-change="handleSizeChange"
+                        @current-change="handleCurrentChange"
+                        :current-page="currentPage4"
+                        :page-sizes="[100, 200, 300, 400]"
+                        :page-size="100"
+                        layout="total, sizes, prev, pager, next, jumper"
+                        :total="400">
+                </el-pagination>
+            </div>
+
+        </div>
+        </div>
+        <div class="footer">
+               <span class="title">海拉尔区人民医院</span>
+               <span>
+                   <span>网站首页</span>
+                   <span>医院概况</span>
+                   <span>院务公开</span>
+                   <span>患者服务</span>
+                   <span>医院新闻</span>
+               </span>
+               <span class="survey">
+                   <span>
+                        <img src="../static/image/arctype/img_1.png" alt="">
+                        <p>职工满意度调查</p>
+                   </span>
+                    <span>
+                        <img src="../static/image/arctype/img_2.png" alt="">
+                        <p>职工满意度调查</p>
+                   </span>
+                     <span>
+                        <img src="../static/image/arctype/img_3.png" alt="">
+                         <p>职工满意度调查</p>
+                   </span>
+               </span>
+        </div>
+    </div>
+
+
+</div>
+
+<script>
+    new Vue({
+        el: '#index',
+        data: function () {
+            return {
+                visible: false,
+                list:[
+                    '医院简介',
+                    '现任领导',
+                    '院区设置',
+                    '行政架构',
+                    '临床科室',
+                    '资质荣耀',
+                ],
+                article:[
+                    {
+                        title:'东莞市人民医院临床科室管理树状图（医务科2020年11月修订）',
+                        time:'2021-12-13'
+                    },
+                    {
+                        title:'东莞市人民医院临床科室管理树状图（医务科2020年11月修订）',
+                        time:'2021-12-13'
+                    },
+                    {
+                        title:'东莞市人民医院临床科室管理树状图（医务科2020年11月修订）',
+                        time:'2021-12-13'
+                    },
+                    {
+                        title:'东莞市人民医院临床科室管理树状图（医务科2020年11月修订）',
+                        time:'2021-12-13'
+                    },
+                    {
+                        title:'东莞市人民医院临床科室管理树状图（医务科2020年11月修订）',
+                        time:'2021-12-13'
+                    },
+                    {
+                        title:'东莞市人民医院临床科室管理树状图（医务科2020年11月修订）',
+                        time:'2021-12-13'
+                    },
+                    {
+                        title:'东莞市人民医院临床科室管理树状图（医务科2020年11月修订）',
+                        time:'2021-12-13'
+                    },
+                    {
+                        title:'东莞市人民医院临床科室管理树状图（医务科2020年11月修订）',
+                        time:'2021-12-13'
+                    },
+
+                ],
+                currentPage1: 5,
+                currentPage2: 5,
+                currentPage3: 5,
+                currentPage4: 4
+            }
+        },
+        methods: {
+            handleSizeChange(val) {
+                console.log(`每页 ${val} 条`);
+            },
+            handleCurrentChange(val) {
+                console.log(`当前页: ${val}`);
+            }
+        },
+    })
+</script>
+</body>
+</html>

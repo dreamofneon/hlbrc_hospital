@@ -1,0 +1,72 @@
+.flex_do(){
+  display: flex;
+
+  align-items: center;
+}
+@color : rgb(3, 110, 180);
+.index{
+
+}
+
+
+.list{
+  background-color: white;
+  padding-top: 20px;
+  padding-right: 18%;
+  padding-left: 18%;
+  padding-bottom: 20px;
+  .flex_do();
+  flex-direction: row;
+  align-items: flex-start;
+  .list_left{
+    h3{
+      width: 270px;
+      height: 80px;
+      background-color: @color;
+      margin: 0px;
+      color: white;
+      .flex_do();
+      padding-left: 15px;
+      box-sizing: border-box;
+    }
+    p{
+      box-sizing: border-box;
+      padding: 10px;
+      background-color: rgb(240, 240, 240);
+      width: 270px;
+      height: 71px;
+      margin: 0px;
+      .flex_do();
+      justify-content: center;
+      border-bottom: 1px solid #E2E2E2;
+    }
+
+  }
+  .list_right{
+    .artlist{
+      ul{
+        li{
+          height: 60px;
+          width: 900px;
+          .flex_do();
+          justify-content: space-between;
+          border-bottom: 1px dotted gainsboro;
+          span{
+            .flex_do();
+          }
+        }
+      }
+    }
+
+  }
+  .page{
+    margin-top: 40px;
+    margin-left: 40px;
+  }
+  .footer{
+    width: 100%;
+    padding-left: 18%;
+    padding-right: 18%;
+  }
+}
+

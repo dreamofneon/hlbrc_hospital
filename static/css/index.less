@@ -1,0 +1,239 @@
+.flex_do(){
+  display: flex;
+
+  align-items: center;
+}
+
+
+@color : rgb(3, 110, 180);
+body{
+  background-color: rgb(240, 240, 240);
+}
+
+.head{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  p{
+    padding-left: 20%;
+    padding-right: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    .head_item{
+       .flex_do();
+       span{
+         .flex_do();
+         margin-right: 10px;
+         color: #888888;
+         img{
+           margin-right: 10px;
+         }
+       }
+    }
+  }
+}
+
+.logo{
+     .flex_do();
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 18%;
+  padding-right: 18%;
+  img{
+    width: 403px;
+    height: 120px;
+  }
+  .input-group{
+    .flex_do();
+    input{
+      width: 380px;
+      height: 50px;
+      border: 1px solid black;
+      border-radius:20px;
+
+    }
+  }
+
+}
+
+.navs{
+  width: 100%;
+  background-color: @color;
+  padding: 14px;
+  padding-left: 20%;
+  span{
+    font-size: 16px;
+    color: white;
+    margin-right: 15px;
+  }
+}
+.carousel{
+  margin-top: 20px;
+  .el-carousel__container{
+    text-align: center;
+  }
+
+}
+.news{
+  height: 430px;
+  width: 100%;
+  padding-left: 20%;
+  padding-right: 20%;
+  .flex_do();
+  flex-direction: row;
+  justify-content: space-between;
+  .news_left{
+    .flex_do();
+    height: 100%;
+    flex-direction: column;
+    justify-content: left;
+    h3{
+      width: 100%;
+    }
+    img{
+      width: 450px;;
+      height: 300px;
+    }
+    .flex_do();
+    .news_left_bottom{
+      .flex_do();
+      align-items: flex-start;
+      .carousel{
+        width: 450px;
+      }
+      .bottom_items{
+        margin-top: 20px;
+        margin-left: 20px;
+        height: 100%;
+        .flex_do();
+        flex-direction: column;
+        justify-content: left;
+        button{
+          width: 341px;
+          height: 54px;
+          border: 1px solid gainsboro;
+          background-color: white;
+          margin-bottom: 10px;
+        }
+
+      }
+      margin-right: 20px;
+    }
+  }
+  .news_right{
+    height: 100%;
+
+  }
+
+}
+
+.classic{
+  background-color: #eaf5ef;
+  padding: 40px;
+  padding-left: 20%;
+  padding-right: 20%;
+  h3{
+    .flex_do();
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: @color;
+  }
+  .flex_do();
+  flex-direction: column;
+  .classic_items{
+    box-sizing: border-box;
+    background-color: white;
+
+    .flex_do;
+    flex-direction: row;
+    .classic_item{
+      padding:20px;
+      border: 1px solid gainsboro;
+      width: 200px;
+      height: 300px;
+      .flex_do();
+      flex-direction: column;
+      img{
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        margin-top: 20px;
+        margin-bottom: 40px;
+      }
+      h3{
+        width: 100%;
+        .flex_do();
+        justify-content: center;
+        img{
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          margin: 0px;
+        }
+      }
+    }
+  }
+
+}
+.info{
+  padding:40px;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-bottom: 80px;
+  .flex_do();
+  flex-direction: row;
+  .info_left{
+
+    .flex_do();
+    flex-direction: column;
+   align-items: flex-start;
+    justify-content: left;
+    h3{
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: @color;
+    }
+  }
+  img{
+    margin-left: 20px;
+    width: 370px;
+    height: 350px;
+  }
+}
+
+.footer{
+  padding: 20px;
+  padding-left: 18%;
+  padding-right: 18%;
+
+  color: white;
+  background-color: @color;
+  justify-content: space-between;
+
+  .flex_do();
+  flex-direction: row;
+  .title{
+    font-size: 26px;
+  }
+  .survey{
+    .flex_do();
+    flex-direction: row;
+    span{
+      margin-right: 15px;
+      .flex_do();
+      flex-direction: column;
+      img{
+        width: 115px;
+        height: 115px;
+      }
+      p{
+        margin: 0px;
+      }
+    }
+  }
+}
