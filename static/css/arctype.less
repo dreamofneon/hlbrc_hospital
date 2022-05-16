@@ -5,17 +5,21 @@
 }
 @color : rgb(3, 110, 180);
 .index{
-
+  width: 100%;
+  overflow: auto;
 }
 
 
 .list{
+  box-sizing: border-box;
+  width: 100%;
   background-color: white;
   padding-top: 20px;
-  padding-right: 18%;
-  padding-left: 18%;
+  padding-right: 10%;
+  padding-left: 10%;
   padding-bottom: 20px;
   .flex_do();
+  justify-content: center;
   flex-direction: row;
   align-items: flex-start;
   .list_left{
@@ -30,6 +34,7 @@
       box-sizing: border-box;
     }
     p{
+      cursor: pointer;
       box-sizing: border-box;
       padding: 10px;
       background-color: rgb(240, 240, 240);
@@ -43,11 +48,13 @@
 
   }
   .list_right{
+    width: 100%;
     .artlist{
       ul{
         li{
+          cursor: pointer;
           height: 60px;
-          width: 900px;
+          width: 100%;
           .flex_do();
           justify-content: space-between;
           border-bottom: 1px dotted gainsboro;

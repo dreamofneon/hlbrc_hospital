@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>海拉尔区人民医院</title>
-    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
-    <script src="https://cdn.jsdelivr   .net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet/less" type="text/css" href="../static/css/index.less"/>
     <link rel="stylesheet/less" type="text/css" href="../static/css/arctype.less"/>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="../static/js/http_cdn.staticfile.org_vue_2.2.2_vue.js"></script>
+    <script src="../static/js/http_cdn.jsdelivr.net_npm_axios_dist_axios.js"></script>
+    <script src="../static/js/__cdnjs.cloudflare.com_ajax_libs_less.js_2.5.3_less.js"></script>
+    <link href="../static/css/http_maxcdn.bootstrapcdn.com_bootstrap_3.3.7_css_bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/http_unpkg.com_element-ui_lib_theme-chalk_index.css">
     <!-- 引入组件库 -->
-    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="../static/js/http_unpkg.com_element-ui_lib_index.js"></script>
 </head>
 <body>
 <div id="index">
@@ -33,7 +33,13 @@
     <div class="logo">
         <img src="../static/image/index/logo.svg" alt="">
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="Twitterhandle">
+            <el-input
+                    placeholder="请输入内容"
+                    v-model="search"
+                    class="input"
+            >
+                <i slot="suffix" class="el-input__icon el-icon-search"></i>
+            </el-input>
         </div>
     </div>
 
@@ -56,7 +62,7 @@
             <div class="artlist">
                 <ul>
                     <li v-for="item in article">
-                        <span><img src="../static/image/arctype/img.png" alt="">  {{item.title}} </span>     <span>{{item.time}}</span>
+                        <span @click="turntoarticle(item.title)"><img src="../static/image/arctype/img.png" alt="">  {{item.title}} </span>     <span>{{item.time}}</span>
                     </li>
                 </ul>
             </div>
@@ -109,6 +115,7 @@
         el: '#index',
         data: function () {
             return {
+                search:'请输入内容',
                 visible: false,
                 list:[
                     '医院简介',
@@ -165,7 +172,11 @@
             },
             handleCurrentChange(val) {
                 console.log(`当前页: ${val}`);
-            }
+            },
+            turntoarticle(title){
+                location.href='../article/article.html'
+            },
+
         },
     })
 </script>

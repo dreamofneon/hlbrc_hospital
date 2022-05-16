@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>海拉尔区人民医院</title>
-    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./static/js/http_cdn.staticfile.org_vue_2.2.2_vue.js"></script>
+    <script src="./static/js/http_cdn.jsdelivr.net_npm_axios_dist_axios.js"></script>
     <link rel="stylesheet/less" type="text/css" href="static/css/index.less" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="./static/js/__cdnjs.cloudflare.com_ajax_libs_less.js_2.5.3_less.js"></script>
+    <link href="./static/css/http_maxcdn.bootstrapcdn.com_bootstrap_3.3.7_css_bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/http_unpkg.com_element-ui_lib_theme-chalk_index.css">
     <!-- 引入组件库 -->
-    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="./static/js/http_unpkg.com_element-ui_lib_index.js"></script>
+
 </head>
 <body>
 <div id="index">
@@ -90,7 +90,6 @@
                 </div>
                 <div class="bottom_items">
                     <button v-for="(index,item) in 5" @click="setActiveItem(index)">强国复兴有我</button>
-
                 </div>
             </div>
 
@@ -104,8 +103,10 @@
         </div>
     </div>
     <div class="classic">
+
         <h3>科室导航 <span>更多科室</span></h3>
         <div class="classic_items">
+
             <div v-for="item in 6" class="classic_item">
                 <p>内科系统</p>
                 <img src="./static/image/index/neike.png" alt="">
@@ -135,15 +136,15 @@
                </span>
         <span class="survey">
                    <span>
-                        <img src="../static/image/arctype/img_1.png" alt="">
+                        <img src="./static/image/index/img_10.png" alt="">
                         <p>职工满意度调查</p>
                    </span>
                     <span>
-                        <img src="../static/image/arctype/img_2.png" alt="">
+                        <img src="./static/image/index/img_11.png" alt="">
                         <p>职工满意度调查</p>
                    </span>
                      <span>
-                        <img src="../static/image/arctype/img_3.png" alt="">
+                        <img src="./static/image/index/img_12.png" alt="">
                          <p>职工满意度调查</p>
                    </span>
                </span>
@@ -189,7 +190,7 @@
                this.$refs.carousel.setActiveItem(index-1)
            },
            turntoartlist(item){
-           location.href='arctype/artlist.html'
+             location.href='arctype/artlist.html'
            }
        }
     })
