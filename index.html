@@ -9,6 +9,7 @@
     <script src="./static/js/__cdnjs.cloudflare.com_ajax_libs_less.js_2.5.3_less.js"></script>
     <link href="./static/css/http_maxcdn.bootstrapcdn.com_bootstrap_3.3.7_css_bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="./static/css/http_unpkg.com_element-ui_lib_theme-chalk_index.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <!-- 引入组件库 -->
     <script src="./static/js/http_unpkg.com_element-ui_lib_index.js"></script>
 
@@ -25,8 +26,6 @@
                                     <span><img src="./static/image/index/img_2.png" alt="">咨询建议投诉</span>
                                     <span><img src="./static/image/index/img_3.png" alt="">网上预约</span>
                                     <span><img src="./static/image/index/img_4.png" alt="">满意度调查</span>
-
-
               </span>
           </p>
     </div>
@@ -106,10 +105,9 @@
 
         <h3>科室导航 <span>更多科室</span></h3>
         <div class="classic_items">
-
-            <div v-for="item in 6" class="classic_item">
-                <p>内科系统</p>
-                <img src="./static/image/index/neike.png" alt="">
+            <div v-for="item in this.room" class="classic_item">
+                <p>{{item.name}}</p>
+                <img :src="item.img" alt="">
                 <h3>查看详细 <img src="./static/image/index/array.png" alt=""></h3>
             </div>
         </div>
@@ -172,6 +170,33 @@
                     {
                         title:'医疗卫生机构开展临床研究项目管理办法',
                         time:'2022-03-22'
+                    },
+
+                ],
+                room:[
+                    {
+                        name:'内科系统',
+                        img:'./static/image/index/neike.png',
+                    },
+                    {
+                        name:'外科系统',
+                        img:'./static/image/index/img_13.png',
+                    },
+                    {
+                        name:'门诊系统',
+                        img:'./static/image/index/img_14.png',
+                    },
+                    {
+                        name:'妇产科系统',
+                        img:'./static/image/index/img_15.png',
+                    },
+                    {
+                        name:'儿科系统',
+                        img:'./static/image/index/img_16.png',
+                    },
+                    {
+                        name:'肿瘤系统',
+                        img:'./static/image/index/img_17.png',
                     },
 
                 ],

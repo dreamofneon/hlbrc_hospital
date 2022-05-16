@@ -24,6 +24,7 @@ body{
   width: 100%;
   background-color: rgb(240, 240, 240);
   p{
+    padding-top: 15px;
     padding-left: 10%;
     padding-right: 10%;
     width: 100%;
@@ -73,13 +74,21 @@ body{
   width: 100%;
   background-color: @color;
   box-sizing: border-box;
-  padding: 14px;
   padding-left: 10%;
+  padding-top: 14px;
+  padding-bottom: 14px;
   span{
     cursor: pointer;
     font-size: 16px;
     color: white;
     margin-right: 15px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding: 10px;
+  }
+  span:hover{
+    color: black;
+    background-color: white;
   }
 }
 .carousel{
@@ -146,6 +155,10 @@ body{
           background-color: white;
           margin-bottom: 10px;
         }
+        button:hover{
+          color: white;
+          background-color: @color;
+        }
 
       }
 
@@ -210,6 +223,8 @@ body{
         margin-bottom: 40px;
       }
       h3{
+        font-size: 16px;
+        color: #666666;
         width: 100%;
         .flex_do();
         justify-content: center;
@@ -218,7 +233,15 @@ body{
           height: 12px;
           border-radius: 50%;
           margin: 0px;
+
         }
+      }
+    }
+    .classic_item:hover{
+      background-color: @color;
+      color: white;
+      h3{
+        color: white;
       }
     }
   }
@@ -264,6 +287,7 @@ body{
   .title{
     font-size: 26px;
   }
+
   .survey{
     .flex_do();
     flex-direction: row;
